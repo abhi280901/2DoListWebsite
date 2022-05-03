@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="static/css/main.css" type="text/css" media="all" charset="utf-8">
+	</head>
+	<body>
+		<div id='content_wrapper'>
+			{% include "header.html" %}
+			
+			<div id='content'>
+				<h1>You have not been authenticated!</h1>
+			</p>
+
+			<p>Headers are {{ request.headers}}</p>
+			<p>Referrer is {{ request.referrer}}</p>
+			<p>Cookies are {{ request.cookies}}</p>
+			</div>
+			
+			{% include "footer.html" %}
+		</div>
+	</body>
+</html>

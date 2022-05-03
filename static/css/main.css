@@ -1,0 +1,45 @@
+
+body {
+    background-color: lightblue;
+    text-align: center;
+    font-family: 'Garamond';
+  }
+
+p{
+    text-align: center;
+}
+
+div{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+}
+#logo img {
+    width: 200px;
+}
+
+
+table {
+    border: solid 1pt black;
+    border-collapse: collapse;   
+    margin: auto;
+    font-family: 'Courier New', Courier, monospace;
+ }
+
+ td {
+    border: solid 1pt black;
+    padding: 10pt;
+ }
+ tbody td:hover {
+    background-color: #9e9e9e;
+    color: black;
+ }
+ tbody td{
+     background-color: aquamarine;
+ }
+ thead {
+     background-color: antiquewhite;
+ }
+ 

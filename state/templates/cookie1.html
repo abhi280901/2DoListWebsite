@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <title>Cookie Menu</title>
+</head>
+
+<body>
+   <table>
+      <tr>
+         <td><h3>Query string request (GET)</h3> (somecookie)</td>
+         <td><a href="setcookie?name=Andrew&mesg=Nice%20Cookie">setcookie?name=Andrew&mesg=Nice%20Cookie</a></td>
+      </tr>
+      <tr>
+         <td><h3>Form request (POST)</h3>(somecookie)</td>
+         <td>{% include "cookie1form.html" %}</td>
+      </tr>
+      <tr>
+         <td><h3>URL routing</h3>(usercookie)</td>
+         <td><a href="response/Nice%20Cookie/John">/response/Nice%20Cookie/John</a></td>
+      </tr>
+      <tr>
+         <td><h3>Redirect request (POST)</h3>(usercookie)</td>
+         <td><a href="redirectcookie?name=Peter&mesg=Nice%20Cookie">redirectcookie?name=Peter&mesg=Nice%20Cookie</a></td>
+      </tr>
+      <tr>
+         <td><h3>Examine the cookies<br>({{cookie_lifespan}} second lifespans)</h3></td>
+         <td><b>somecookie: {{name}}</b><br><b>usercookie: {{user}}</b></td>
+      </tr>
+   </table>
+  </body>
+
+</html>

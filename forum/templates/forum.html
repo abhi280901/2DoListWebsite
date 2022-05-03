@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="static/css/main.css" type="text/css" media="all" charset="utf-8">
+	</head>
+	<body>
+		<div id='content_wrapper'>
+			{% include "header.html" %}
+			
+			<div id='content'>
+				<h1>{{forum.name}}</h1>
+				<p>{{forum.headline}}</p>
+				<div class='spacer'></div>
+				<table>
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Message</th>
+							<th>Created At</th>
+							<th>On Forum</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for entry in threads %}
+						<tr>
+							<td><a href='thread?id={{entry.id}}'>{{entry.title}}</a></td>
+							<td>{{entry.message}}</td>
+							<td>{{entry.created_at}}</td>
+							<td>{{entry.forum_id}}</td>
+						</tr>
+						{% else %}
+						<tr>
+							<td>no entries</td>
+							<td rowspan=3>0</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+					
+				</table>
+				<div class='spacer'></div>
+	
+			</div>
+			
+			{% include "footer.html" %}
+		</div>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Mailbox</title>
+        <link rel="stylesheet" href="static/css/main.css" type="text/css" charset="utf-8">  
+    </head>
+    <body>
+        {% include 'header.html' %}
+        <h1>Compose</h1>
+        <form action='nextpage'>
+            <p>
+                <label>Name: </label>
+                <input type='text'  name='username' placeholder="Enter your recepints username"/>
+            </p>
+            <p>
+                <label>Compose Mail: </label>
+                <input type="text" name="mail" placeholder="Enter your message">
+            </p>
+            <p>
+                <input type="submit"  value="Send">
+                <input type="submit"  value="Save As Draft">
+            </p>
+        </form>
+    </body>
+</html>

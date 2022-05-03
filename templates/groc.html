@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{lists.name}}</title>
+        <link rel="stylesheet" href="static/css/main.css" type="text/css" charset="utf-8">  
+        <script src="static/js/jquery-3.6.0.min.js"></script>
+        <script src="static/js/todo.js"></script>
+    </head>
+    <body>
+        {% include 'header.html' %}
+        <h1>{{lists.name}}</h1>
+
+        <h3>Pending Items</h3>
+        <table id="undonetable">
+         <thead>
+             <tr>
+                 <th width='200px'>2-DO</th>
+                 <th>Checkbox</th>
+             </tr>
+         </thead>
+         <tbody>
+             {% for entry in uncom_items %}
+             <tr>
+                 <td><a href='home'>{{entry.name}}</a></td>
+                 <td><input type="checkbox" name= "name" class="check" id="{{entry.id}}"></td>
+             </tr>
+             {% else %}
+             <tr>
+                 <td>no entries</td>
+                 <td>0</td>
+             </tr>
+             {% endfor %}
+
+         </tbody>
+     </table>
+     <h3>Completed Items</h3>
+        <table id="donetable">
+         <thead>
+             <tr>
+                 <th width='200px'>Done</th>
+                 <th>Checkbox</th>
+             </tr>
+         </thead>
+         <tbody>
+             {% for entry in com_items %}
+             <tr>
+                 <td><a href='home'>{{entry.name}}</a></td>
+                 <td><input type="checkbox" name= "name" class="check" id="{{entry.id}}" checked></td>
+             </tr>
+             {% else %}
+             <tr>
+                 <td>no entries</td>
+             </tr>
+             {% endfor %}
+
+         </tbody>
+     </table>
+     <h3>Want to add a new item?</h3>
+     <form method="post" action='/additem' id="addItem">
+        <p>
+            <label>New Item: </label>
+            <input type='text'  name='item' placeholder="Enter the item name"/>
+        </p>
+        <input type="hidden" name="list" value='{{list_id}}'>
+        <p>
+            <input type="submit"  value="Add new item!" id="submit">
+        </p>
+    </form>
+    </body>
+</html>

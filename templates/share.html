@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Shared Lists</title>    
+        <link rel="stylesheet" href="static/css/main.css" type="text/css" charset="utf-8">  
+    </head>
+    <body>
+        {% include 'header.html' %}
+        <h1>Welcome Mr Sithambaram!</h1>
+        <p>
+            <label>Select the user with whom shared list you want displayed: </label>
+            <select>
+                <option value="a">Mr Cyborg Kim</option>
+                <option value="b">Mrs Diana Roberts</option>
+                <option value="c">Miss Kylie Jennner</option>
+                <option value="d">Dr James Archbold</option>
+            </select>
+        </p>
+        <h4>Here are your shared lists with Cyborg Kim:</h4>
+        <table>
+            <thead>
+               <tr>
+                  <th>2-DO</th>
+                  <th>Checkbox</th>
+               </tr>
+            </thead>
+            
+            <tbody>
+               <tr>
+                  <td>Get groceries</td>
+                  <td><input type="checkbox"></td>
+               </tr>
+               <tr>
+                  <td>Get kids from school</td>
+                  <td><input type="checkbox"></td>
+               </tr> 
+               <tr>
+                   <td>Hit the gym</td>
+                   <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Make dinner</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Meeting at 6</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Movie at 10s</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

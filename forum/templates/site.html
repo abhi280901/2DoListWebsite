@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="static/css/main.css" type="text/css" media="all" charset="utf-8">
+	</head>
+	<body>
+		<div id='content_wrapper'>
+			{% include "header.html" %}
+			
+			<div id='content'>
+
+				<h1>Welcome To CS139 Forums!</h1>
+
+
+				<p>This application is a sample application to demonstrate the ideas in the course.</p>
+				<p>Please select a forum from those below.</p>
+				<div class='spacer'></div>
+				<table>
+					<thead>
+						<tr>
+							<th width='200px'>Forum</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for entry in forums %}
+						<tr>
+							<td><a href='forum?id={{entry.id}}'>{{entry.name}}</a></td>
+							<td>{{entry.headline}}</td>
+						</tr>
+						{% else %}
+						<tr>
+							<td>no entries</td>
+							<td>0</td>
+						</tr>
+						{% endfor %}
+
+					</tbody>
+				</table>
+				
+			</div>
+			
+			{% include "footer.html" %}
+		</div>
+	</body>
+</html>

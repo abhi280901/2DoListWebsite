@@ -1,0 +1,22 @@
+<div id='logo'>
+	<img src='static/images/logo139.png'>
+</div>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<nav>
+	<ul>
+		<li><a href='site'>Home</a></li>
+		<li><a href='about'>About</a></li>
+		<li><a href='registration'>Register</a></li>
+		<li><a href='login'>Login</a></li>										
+	</ul>
+</nav>

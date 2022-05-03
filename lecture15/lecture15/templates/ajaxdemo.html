@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Auto completer</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script>
+		function showHint(str) {
+			if ($('#name').val() == "") {
+				$('#txtHint').html("");
+			} else {
+				$.get("/suggestnames?q=" + str, function (data) {
+					$('#txtHint').html(data);
+				});
+
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+	Start typing a name in the field below: <br>
+	<input type="text" name="name" value="" onkeyup="showHint(this.value)" id="name" autocomplete="off"> <br>
+	<span id='txtHint'></span>
+</body>
+
+</html>

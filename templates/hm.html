@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Home Page</title>  
+        <link rel="stylesheet" href="static/css/main.css" type="text/css" charset="utf-8">  
+    </head>
+    <body>
+        {% include 'header.html' %}
+        <h1>Welcome {{user.first_name}}!</h1>
+        <h2>Here are your lists:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th width='200px'>2-DO</th>
+                    <th>Checkbox</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in lists %}
+                <tr>
+                    <td><a href='groc?id={{entry.id}}'>{{entry.name}}</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td>no entries</td>
+                    <td>0</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p>
+            Want to create a new list?<a href="add">Click here</a>
+        </p>
+        {% include 'footer.html' %}
+    </body>
+</html>
